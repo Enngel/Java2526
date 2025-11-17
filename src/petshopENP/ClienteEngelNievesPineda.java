@@ -6,6 +6,7 @@ public class ClienteEngelNievesPineda {
 	private String nombre,direccion;
 	
 	//Hola
+	//Adios
 	
 	public ClienteEngelNievesPineda( String nombre, String direccion) {
 		super();
