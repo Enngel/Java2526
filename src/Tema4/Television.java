@@ -2,40 +2,41 @@ package Tema4;
 
 public class Television extends Electrodomestico {
 
-    private int resolucion;
-
+	
+    private final static int RESOLUCION_BASE=30;
+    
+    private int iResolucion;
     public Television() {
-        super();
-        this.resolucion = 20;
+     this(RESOLUCION_BASE);
+     
     }
 
-    public Television(String marca, String modelo, double precio, String color, double potencia, 
-                      double horasDiarias, double precioEnergia, int diasSemanales, int resolucion) {
+    public Television (int paramResolucion) {
+    	super(MARCA_BASE,MODELO_BASE,PRECIO_BASE,COLOR_BASE,POTENCIA_BASE,HORAS_BASE,DIAS_BASE,PRECIO_ENERGIA_BASE);
+    	this.iResolucion = paramResolucion;
     	
-        super(marca, modelo, color, precio, potencia, horasDiarias, precioEnergia, diasSemanales);
-        
-        this.resolucion = resolucion;
     }
+   
 
     @Override
     public double consumoAnual() {
         double consumo = super.consumoAnual();
-        if (this.resolucion > 50) {
+        if (this.iResolucion > 50) {
             consumo += 30;
         }
         return consumo;
     }
 
     public int getResolucion() {
-        return resolucion;
+        return iResolucion;
     }
 
     public void setResolucion(int resolucion) {
-        this.resolucion = resolucion;
+        this.iResolucion = resolucion;
     }
 
     @Override
     public String toString() {
-        return super.toString() + ", Resolución=" + resolucion + " pulgadas";
+        return super.toString() + ", Resolución=" + iResolucion + " pulgadas";
     }
 }
